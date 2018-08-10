@@ -1,0 +1,2 @@
+# The Program "Fall to the Earth"
+This program calculates the motion of a body falling on the Earth from space and penetrating into the Earth through, neglecting the force of the Earth's elasticity and the resistance of air and atmosphere, that inhibit the body.

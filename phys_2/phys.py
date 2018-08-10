@@ -1,13 +1,17 @@
 import math
 
+# Welcome to the Module "Phys" 2.0
+
 def help():
     print("Dear Guest!")
-    print("Welcome to the physics module _Phys_ !")
+    print("Welcome to the physics module _Phys_ 2.0!")
     print("My name is Seva Naumov. Program is made by me.")
     print(" You can find a lot of physical \
-constans or calculate some physical values.")
+constans or calculate some physical values from Mechanics.")
     print("So you can find some astronomical data about our planet, \
-solar system, and our galaxy.")
+solar system, and our galaxy from Astronimical Mechanics.")
+    print("Finally, you саn find functions with formula of idel gas")
+    print("from Thermodynamics.")
     print()
     print("You could enter : phys.[q_data]() ")
     print("[q] is physical quantity or unit (in other case).")

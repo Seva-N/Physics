@@ -1,0 +1,2 @@
+# The program "Spring pendulum"
+This program calculates the movement of a spring with a certain coefficient of elasticity and a certain mass at any time, the motion of which forms an infinite spring pendulum, neglecting the resistance of the air and weakening the elasticity. The motion depends entirely on the coefficient of elasticity and the starting speed.

@@ -4,7 +4,7 @@ The module "Phys" has been changed:
 2. Added pressure functions and a list of densities of different bodies. 
 3. Added functions of Elastic force, Frictional force and Resistance force with special cases and with a list of the drag coefficient for different bodies. 
 4. In the section of Astronomy the equatorial and polar radiuses of the Earth are added. 
-5. The section "Thermodynamics" was added. It has constants values and functions for the ideal gas equation of Mendeleev-Clapeyron. 
+5. The section "Thermodynamics" was added. It has constant values and functions for the ideal gas equation of Mendeleev-Clapeyron. 
 
 The module includes:
 

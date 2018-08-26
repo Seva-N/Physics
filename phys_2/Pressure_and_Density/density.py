@@ -51,7 +51,7 @@ while d1 < h:
 	if phys.t(T) > -270.5:
 		T = phys.T_h(T, l)
 	g = phys.a_(phys.M(), phys.R(), d1)
-	d_P = P1 * -(M * g * l / (R * T))
+	d_P = -(p1 * g * l)
 	P1 = P1 + d_P
 	p1 = P1 * M / (R * T)
 	d1 = d1 + l

@@ -1,10 +1,10 @@
 import math
 
-# Welcome to the Module "Phys" 2.1
+# Welcome to the Module "Phys" 2.0
 
 def help():
     print("Dear Guest!")
-    print("Welcome to the physics module _Phys_ 2.1!")
+    print("Welcome to the physics module _Phys_ 2.0!")
     print("My name is Seva Naumov. Program is made by me.")
     print(" You can find a lot of physical \
 constans or calculate some physical values from Mechanics.")
@@ -54,30 +54,7 @@ solar system, and our galaxy from Astronimical Mechanics.")
 # Mechanics:~
 
 
-
-# Horizon distance: ~
-
-
-def l_horizon(h):
-    R = 6356863
-    l_horizon = ((R + h) ** 2 - R ** 2) ** (1/2)
-    return l_horizon
-
-def L_horizon(h):
-    R = 6356863
-    L_horizon = math.degrees(math.acos(R / (R + h))) * math.pi * R / 180
-    return L_horizon
-
-
-def l_horizon_(h, R):
-    l_horizon_ = ((R + h) ** 2 - R ** 2) ** (1/2)
-    return l_horizon_
-
-def L_horizon_(h, R):
-    L_horizon_ = math.degrees(math.acos(R / (R + h))) * math.pi * R / 180
-    return L_horizon_
-
-
+    
 # Newton's mechanics:
 
 
@@ -126,7 +103,7 @@ def P_f_(p, h, g): #~
     return P_f_
 
 
-def P_atmosphere(): #~ for 273 K (0°C)
+def P_atmosphere(): #~ for 273 K
     P_atmosphere = 101325
     return P_atmosphere
 
@@ -303,7 +280,7 @@ def _N(m, g):
     _N = m * g
     return _N
 
-def _N_(m, b, g):
+def _N_(m, g, b):
     _N_ = m * g * math.cos(math.radians(b))
     return _N_
 
@@ -341,12 +318,12 @@ def _a_f_(n, b, g):
         _a_f_ = 0
     return _a_f_
 
-def _a_f_F_(F, m, n, b, g):
+def _a_f_F(F, m, n, b, g):
     if F / m + g * math.sin(math.radians(b)) > g * n * math.cos(math.radians(b)):
-        _a_f_F_ = F / m + g * (math.sin(math.radians(b)) - n * math.cos(math.radians(b)))
+        _a_f_F = F / m + g * (math.sin(math.radians(b)) - n * math.cos(math.radians(b)))
     else:
-        a_f_F_ = 0
-    return a_f_F_
+        a_f_F = 0
+    return a_f_F
 
 
 # Resistance force ~
@@ -362,7 +339,6 @@ def F_r1(k, v):
 
 def F_r2(k, v):
     F_r2 = -k * v * math.fabs(v)
-    return F_r2
 
 # coefficient of resistance: ~
 
@@ -843,7 +819,6 @@ def t_min():
     t_min = -273
     return t_min
 
-
 # the Mendeleev-Clapeyron equation:~
 
 
@@ -903,147 +878,6 @@ def T_h(T, h):
     return T_h
 
 
-# Accurate pressure and density measurement at a specific temperature:~
-
-
-def p_t(t):
-    R = 8.31447
-    M = 0.0289644
-    P = 101325
-    T = 273
-    l = t / 100000
-    d = 0
-    if t != 0:
-        while math.fabs(d) < math.fabs(t):
-            p = P * M / (R * T)
-            i = d + l
-            T = 273 + i
-            P = p * R * T / M
-            d = d + l
-            i = d + l
-            T = 273 + i
-    else:
-        p = P * M / (R * T)
-
-    p_t = p
-    
-    return p_t
-
-def P_t(t):
-    R = 8.31447
-    M = 0.0289644
-    P = 101325
-    T = 273
-    l = t / 100000
-    d = 0
-    
-    if t != 0:
-        while math.fabs(d) < math.fabs(t):
-            p = P * M / (R * T)
-            i = d + l
-            T = 273 + i
-            P = p * R * T / M
-            d = d + l
-            i = d + l
-            T = 273 + i
-    else:
-        p = P * M / (R * T)
-
-    P_t = P
-    
-    return P_t
-
-def p_h(t, h):
-
-    R = 8.31447
-    M = 0.0289644
-
-    G = 6.6740831 * 10 ** -11
-    M_ = 5.97 * 10 ** 24
-    R_ = 6356863
-    P = 101325
-    T = 273
-    l = t / 100000
-    d = 0
-    
-    if t != 0:
-        while math.fabs(d) < math.fabs(t):
-            p = P * M / (R * T)
-            i = d + l
-            T = 273 + i
-            P = p * R * T / M
-            d = d + l
-            i = d + l
-            T = 273 + i
-    else:
-        p = P * M / (R * T)
-
-    l = h / 100000
-    T = 273 + t
-    d = 0
-
-    while math.fabs(d) < math.fabs(h):
-        if T - 273 > -270.5:
-            T = T - 0.0065 * l
-
-        g = G * M_ / (R_ + d) ** 2
-        d_P = -(p * g * l)
-
-        if h >= 0:
-            P = P + d_P
-
-        p = P * M / (R * T)
-        d = d + l
-    p_h = p
-
-    return p_h
-
-def P_h(t, h):
-
-    R = 8.31447
-    M = 0.0289644
-
-    G = 6.6740831 * 10 ** -11
-    M_ = 5.97 * 10 ** 24
-    R_ = 6356863
-    P = 101325
-    T = 273
-    l = t / 100000
-    d = 0
-    
-    if t != 0:
-        while math.fabs(d) < math.fabs(t):
-            p = P * M / (R * T)
-            i = d + l
-            T = 273 + i
-            P = p * R * T / M
-            d = d + l
-            i = d + l
-            T = 273 + i
-    else:
-        p = P * M / (R * T)
-
-    l = h / 100000
-    T = 273 + t
-    d = 0
-
-    while math.fabs(d) < math.fabs(h):
-        if T - 273 > -270.5:
-            T = T - 0.0065 * l
-
-        g = G * M_ / (R_ + d) ** 2
-        d_P = -(p * g * l)
-
-        if h >= 0:
-            P = P + d_P
-
-        p = P * M / (R * T)
-        d = d + l
-    P_h = P
-
-    return P_h
-
-
 
 # Relativity of Einstein:~
 
@@ -1051,50 +885,23 @@ def P_h(t, h):
 
 # relativity
 
-
-def relativity_v(n, v):
+def relativity(n, v):
     c = 299792458
-    relativity_v = n / (1 - (v / c) ** 2) ** (1/2)
-    return relativity_v
+    relativity = n / (1 - (v / c) ** 2) ** (1/2)
+    return relativity
 
-def l_relat_v(n, v):
+def l_relat(n, v):
     c = 299792458
-    l_relat_v = n / (1 - (v / c) ** 2) ** (1/2)
-    return l_relat_v
+    l_relat = n / (1 - (v / c) ** 2) ** (1/2)
+    return l_relat
 
 
-def relativity_v_(n, v):
+def relativity_(n, v):
     c = 299792458
-    relativity_v_ = n * (1 - (v / c) ** 2) ** (1/2)
-    return relativity_v_
+    relativity_ = n * (1 - (v / c) ** 2) ** (1/2)
+    return relativity_
 
-def l_relat_v_(n, v):
+def l_relat_(n, v):
     c = 299792458
-    l_relat_v_ = n * (1 - (v / c) ** 2) ** (1/2)
-    return l_relat_v_
-
-
-def l_relativity_g(n, M, r):
-    G = 6.6740831 * 10 ** -11
-    c = 299792458
-    l_relativity_g = n / (1 - (2 * G * M / (r * c ** 2))) ** (1/2)
-    return l_relativity_g
-
-def l_relat_g(n, M, r):
-    G = 6.6740831 * 10 ** -11
-    c = 299792458
-    l_relat_g = n / (1 - (2 * G * M / (r * c ** 2))) ** (1/2)
-    return l_relat_g
-
-
-def l_relativity_g_(n, M, r):
-    G = 6.6740831 * 10 ** -11
-    c = 299792458
-    l_relativity_g_ = n * (1 - (2 * G * M / (r * c ** 2))) ** (1/2)
-    return l_relativity_g_
-
-def l_relat_g_(n, M, r):
-    G = 6.6740831 * 10 ** -11
-    c = 299792458
-    l_relat_g_ = n * (1 - (2 * G * M / (r * c ** 2))) ** (1/2)
-    return l_relat_g_
+    l_relat_ = n * (1 - (v / c) ** 2) ** (1/2)
+    return l_relat_
